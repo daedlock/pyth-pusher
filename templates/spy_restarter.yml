@@ -3,7 +3,6 @@ kind: ServiceAccount
 apiVersion: v1
 metadata:
   name: deployment-restart
-     
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -20,8 +19,6 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: deployment-restart
-  # namespace: pyth-price-pusher
-     
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -29,7 +26,6 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: deployment-restart
-    # namespace: pyth-price-pusher
 ---       
 apiVersion: batch/v1
 kind: CronJob
