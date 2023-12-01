@@ -4,9 +4,11 @@ kind: ConfigMap
 metadata:
   name: price-pusher-config-{{ $pusher.id }}
 data:
-  mnemonic.txt: {{- $pusher.mnemonic  | toYaml | indent 1  }}
-  price_config.yaml: {{- $pusher.price_config | toYaml | indent 1 }}
+  mnemonic.txt: {{- $pusher.mnemonic  | toYaml | indent 2  }}
+  price_config.yaml: {{- $pusher.price_config | toYaml | indent 2 }}
+
 ---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -68,5 +70,5 @@ spec:
           configMap:
             name: price-pusher-config-{{ $pusher.id }}
       restartPolicy: Always
-
+---
 {{- end }}
