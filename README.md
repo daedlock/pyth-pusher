@@ -8,9 +8,10 @@ helm upgrade --install pyth-pusher keom/pyth-pusher --namespace pyth --create-na
 ```
 
 # Notes
-The resource allocations is relaxed to ensure smooth operations
+The resource allocations is relaxed to ensure smooth operations. Might improve in future versions
 
 # TODO
 - Move resource assignment to values.yml
 - Add monitoring stack to monitor gas prices and expenses
 - Alerts when pusher wallets passes a preset threshold
+- Ingress option to expose price-service for dapps
